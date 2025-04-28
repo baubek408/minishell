@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmynbyae <mynbyae@student.42prague.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 15:35:09 by bmynbyae          #+#    #+#             */
-/*   Updated: 2025/04/25 17:07:45 by bmynbyae         ###   ########.fr       */
+/*   Created: 2025/04/25 16:29:34 by bmynbyae          #+#    #+#             */
+/*   Updated: 2025/04/25 16:29:50 by bmynbyae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "libft.h"
 
-int	main(int ac, char **av, char **envp)
+char	*ft_strndup(const char *s, size_t n)
 {
-	t_env_node	*env_root;
+	size_t	len;
+	char	*dup;
+	size_t	i;
 
-	(void)ac;
-	(void)av;
-	env_root = init_shell(envp);
-	if (!env_root && *envp)
+	len = 0;
+	while (s[len] && len < n)
+		len++;
+	dup = malloc(len + 1);
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		perror("Shell initialization failed");
-		return (EXIT_FAILURE);
+		dup[i] = s[i];
+		i++;
 	}
-	shell_loop(env_root);
-	cleanup_shell(env_root);
-	return (EXIT_SUCCESS);
+	dup[len] = '\0';
+	return (dup);
 }

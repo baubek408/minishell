@@ -6,7 +6,7 @@
 #    By: bmynbyae <mynbyae@student.42prague.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 13:05:28 by bmynbyae          #+#    #+#              #
-#    Updated: 2025/04/22 14:39:39 by bmynbyae         ###   ########.fr        #
+#    Updated: 2025/04/28 15:27:35 by bmynbyae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,9 +33,11 @@ LIBFT_PATH = inc/libft/
 # --- Source Files ---
 # List all .c files for minishell itself, including paths
 SRCS = $(SRC_DIR)main.c \
-       $(PARSING_DIR)cmd_cheker.c \
-       $(PARSING_DIR)env.c \
-       $(PARSING_DIR)parsing.c
+		$(PARSING_DIR)cmd_cheker.c \
+		$(PARSING_DIR)env.c \
+		$(PARSING_DIR)env_2.c \
+		$(PARSING_DIR)parsing.c \
+		$(PARSING_DIR)utils.c
 # Add execution files here when you create them, e.g.:
 #      $(EXE_DIR)executor.c \
 

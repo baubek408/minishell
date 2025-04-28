@@ -1,0 +1,7 @@
+==103389== Memcheck, a memory error detector
+==103389== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==103389== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==103389== Command: ./minishell
+==103389== Parent PID: 97779
+==103389== 
+==103389== FATAL: can't open suppressions file "readline.supp"

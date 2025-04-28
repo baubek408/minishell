@@ -1,0 +1,49 @@
+# This is a Valgrind suppression file example for readline leaks.
+# DO NOT USE THIS FILE DIRECTLY. Generate your own!
+# Use: valgrind --gen-suppressions=all ./minishell
+# Then copy the relevant blocks here.
+
+{
+   ReadlineLeak_DirectCall_Example1
+   Memcheck:Leak
+   # Indicate a memory leak detected by Memcheck
+   fun:malloc
+   # ... zero or more lines matching the stack trace ...
+   # Maybe an internal readline function is listed here:
+   fun:rl_some_internal_function_allocating
+   fun:readline
+   # ... potentially more functions ...
+   # Usually includes your function that called readline:
+   fun:shell_loop
+   fun:main
+   # ... possibly more system startup functions ...
+}
+
+{
+   ReadlineLeak_AddHistory_Example
+   Memcheck:Leak
+   fun:malloc # Or maybe strdup, calloc etc.
+   # ...
+   fun:add_history # Key function indicating history leak
+   # ...
+   fun:shell_loop
+   fun:main
+}
+
+{
+   ReadlineLeak_AnotherInternal_Example
+   Memcheck:Leak
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/libreadline.so.8.2 # Path will vary!
+   fun:rl_another_internal_detail # Fictional internal function
+   # Use '...' as a wildcard for zero or more frames if needed,
+   # but be specific where possible.
+   ...
+   fun:readline
+   fun:shell_loop
+   fun:main
+}
+
+# Add more blocks below as needed, based on Valgrind's output
+# for YOUR program execution. Each block should represent a
+# distinct leak point originating from the readline library.

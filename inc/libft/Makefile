@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bmynbyae <bmynbyae@student.42prague.com    +#+  +:+       +#+         #
+#    By: bmynbyae <mynbyae@student.42prague.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/12 12:47:43 by bmynbyae          #+#    #+#              #
-#    Updated: 2024/10/12 12:50:41 by bmynbyae         ###   ########.fr        #
+#    Updated: 2025/04/28 15:22:19 by bmynbyae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC = ft_isalpha.c \
 	ft_strchr.c \
 	ft_strrchr.c \
 	ft_strncmp.c \
+	ft_strndup.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_strnstr.c \
@@ -48,6 +49,7 @@ SRC = ft_isalpha.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
+	ft_strcmp.c \
 
 SRCBON = ft_lstnew.c \
 	ft_lstadd_front.c \
